@@ -10,5 +10,7 @@ package proyecto02.Proyecto02_AppWeb;
  * @author alero
  */
 public class NewClass {
-    
+    public static void main(String[] args) {
+        System.out.println("Buenas!");
+    }
 }
