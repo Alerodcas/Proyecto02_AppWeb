@@ -31,7 +31,7 @@ public class Client {
             out.println(line);
             out.flush();
             System.out.println("Message sent");
-            //System.out.println(in.read());
+            System.out.println("The result is: " + in.readLine());
         }
         scanner.close();
     }catch (IOException e){

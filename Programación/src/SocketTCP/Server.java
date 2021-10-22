@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 
-package SocketTCP;
+package project02.Proyecto02_AppWeb.Programación.src.SocketTCP;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,6 +13,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import project02.Proyecto02_AppWeb.Programación.src.ExpressionTREE.InfixToPosfix;
+import project02.Proyecto02_AppWeb.Programación.src.ExpressionTREE.ExpressionTree;
 
 /**
  *
@@ -63,9 +66,11 @@ public class Server {
                 String line;
                 while ((line = in.readLine()) != null) {
                     System.out.println("Sent from the client: " + line);
-                    out.println(line);
+                    String posfix = InfixToPosfix.main(line);
+                    double result = ExpressionTree.main(posfix);
+                    String num = result + "";
+                    out.println(num);
                     out.flush();
-                    //Aqui se llamaria el metodo que genera el arbol y retorna la solucion
                 }
             } catch (IOException e) {
                 e.printStackTrace();
